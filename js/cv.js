@@ -127,22 +127,35 @@ function datoscv() {
                         '<p><u><strong><h3>Estudios</h3></strong></u></p>' +
                         '</div>'
                     Object.entries(element[1].estudios).forEach(itemes => {
-                        console.log(itemes)
-                        datos_cv = datos_cv + '<div>'
-                        '<div>Año:' + itemes[1].anio + '</div>' +
-                            '<div>Título: ' + itemes[1].titulo + '</div>' +
-                            '<div>Universidad o Institución: ' + itemes[1].institucion + '</div>' +
-                            '<div>' +
-                            '<p>' + itemes[1].ubicacion + '</p>' +
-                            '</div>' +
-                            '</div>'
-                    })
-                    datos_cv = datos_cv + '</div'
+                            //console.log(itemes)
+                            datos_cv = datos_cv + '<div>' +
+                                '<div class="fs-7"><strong>Año:' + itemes[1].anio + '</strong></div>' +
+                                '<div class="fs-7">Título: ' + itemes[1].titulo + '</div>' +
+                                '<div class="fs-7">' + itemes[1].institucion + '</div>' +
+                                '<div class="fs-7">' +
+                                '<p>' + itemes[1].ubicacion + '</p>' +
+                                '</div>' +
+                                '</div>'
+                        }) //fin estudios
+                    datos_cv = datos_cv + ' ' +
+                        '<!-- Sección de redes sociales -->' +
+                        '<div class="col-3 text-uppercase">' +
+                        '<p><u><strong><h3>Social</h3></strong></u></p>' +
+                        '</div>'
+                    Object.entries(element[1].sociales).forEach(itemsocial => {
+                            datos_cv = datos_cv + '<div>' +
+                                '<i class="bi ' + itemsocial[0] + ' fs-6"> </i><a>' + itemsocial[1] + '</a>' +
+                                '</div>'
+
+                        }) //fin enlaces sociales
+                    datos_cv = datos_cv + '</section>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>'
                         //datos_cv = datos_cv + '<div class="row">' +
                     document.getElementById("curriculum").innerHTML = document.getElementById("curriculum").innerHTML + datos_cv
                 });
-
-
 
                 document.getElementById("curriculum").style.display = "block"
             }
