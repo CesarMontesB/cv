@@ -117,7 +117,7 @@ function datoscv() {
                         '<p><u><strong><h3>Idiomas</h3></strong></u></p>' +
                         '</div>'
                     Object.entries(element[1].idiomas).forEach(itemidioma => {
-                            console.log(itemidioma)
+                            //console.log(itemidioma)
                             datos_cv = datos_cv + '<div class="row col-3">' +
                                 '<div class="col"><strong>' + itemidioma[0] + '</strong></div>' +
                                 '<div class="col">' + itemidioma[1] + '</div>' +
@@ -126,8 +126,19 @@ function datoscv() {
                     datos_cv = datos_cv + '<div class="col-3 text-uppercase">' +
                         '<p><u><strong><h3>Estudios</h3></strong></u></p>' +
                         '</div>'
-
-                    //datos_cv = datos_cv + '<div class="row">' +
+                    Object.entries(element[1].estudios).forEach(itemes => {
+                        console.log(itemes)
+                        datos_cv = datos_cv + '<div>'
+                        '<div>Año:' + itemes[1].anio + '</div>' +
+                            '<div>Título: ' + itemes[1].titulo + '</div>' +
+                            '<div>Universidad o Institución: ' + itemes[1].institucion + '</div>' +
+                            '<div>' +
+                            '<p>' + itemes[1].ubicacion + '</p>' +
+                            '</div>' +
+                            '</div>'
+                    })
+                    datos_cv = datos_cv + '</div'
+                        //datos_cv = datos_cv + '<div class="row">' +
                     document.getElementById("curriculum").innerHTML = document.getElementById("curriculum").innerHTML + datos_cv
                 });
 
