@@ -1,0 +1,47 @@
+.texto-justificado {
+    text-align: justify;
+}
+
+.valign-center {
+    display: flex;
+    align-items: center;
+}
+
+.bg-verde {
+    background-color: chartreuse;
+}
+
+.bg-plomo {
+    background-color: rgb(212, 211, 211);
+}
+
+.texto-plomo {
+    color: rgb(158, 154, 154);
+}
+
+.contenedor {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .contenedor {
+        width: 95%;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 501px) {
+    .contenedor {
+        width: 90%;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 15px;
+    }
+}
